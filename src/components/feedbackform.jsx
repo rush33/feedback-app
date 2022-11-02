@@ -13,7 +13,7 @@ function Form() {
   const { addFeedback } = useContext(FeedbackContext);
 
   const handleText = (t) => {
-    if (text == "") {
+    if (text === "") {
       setBtnDisabled(true);
       setMessage(null);
     } else if (text !== "" && text.trim().length <= 10) {
