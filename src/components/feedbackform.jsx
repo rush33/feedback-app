@@ -35,6 +35,7 @@ function Form() {
         rating,
       };
       addFeedback(newFeedback);
+      
     }
   };
 
