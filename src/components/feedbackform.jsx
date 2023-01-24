@@ -43,6 +43,7 @@ function Form() {
     <Card>
       <form onSubmit={handleSubmit}>
         <h3>How would you rate our services?</h3>
+        <p>Bug: Manual reload required after clicking 'Send' once for feedback to appear</p>
         <RatingSelect select={(rating) => setRating(rating)} />
         <div className="input-group">
           <input

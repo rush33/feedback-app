@@ -35,6 +35,7 @@ export const FeedbackProvider = ({ children }) => {
     const data = await res.json();
 
     setFeedback([data, ...feedback]);
+    console.log("feedback added");
   };
 
   //Deleting feedback
