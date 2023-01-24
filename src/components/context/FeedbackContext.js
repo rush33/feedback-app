@@ -13,7 +13,9 @@ export const FeedbackProvider = ({ children }) => {
   
   async function fetchFeedback() {
     // const res = await fetch(`/feedback?_sort=id&_order=desc`);
-    const res = await fetch(`https://important-erin-veil.cyclic.app/feedback`);
+    const res = await fetch(
+      `https://important-erin-veil.cyclic.app/feedback?_sort=id&_order=desc`
+    );
     const data = await res.json();
 
     setFeedback(data);
