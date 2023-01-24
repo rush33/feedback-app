@@ -10,8 +10,10 @@ export const FeedbackProvider = ({ children }) => {
   }, []);
 
   //Fetching feedback
+  
   async function fetchFeedback() {
-    const res = await fetch(`/feedback?_sort=id&_order=desc`);
+    // const res = await fetch(`/feedback?_sort=id&_order=desc`);
+    const res = await fetch(`https://important-erin-veil.cyclic.app/feedback`);
     const data = await res.json();
 
     setFeedback(data);
@@ -20,7 +22,7 @@ export const FeedbackProvider = ({ children }) => {
 
   //Adding feedback
   const addFeedback = async (newFeedback) => {
-    const res = await fetch("/feedback", {
+    const res = await fetch("https://important-erin-veil.cyclic.app/feedback", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,10 +38,9 @@ export const FeedbackProvider = ({ children }) => {
   //Deleting feedback
   const deleteFeedback = async (id) => {
     if (window.confirm("Are you sure you want to delete?")) {
-      await fetch(`feedback/${id}`, {
-        method: 'DELETE'
-      })
-
+      await fetch(`https://important-erin-veil.cyclic.app/feedback/${id}`, {
+        method: "DELETE",
+      });
 
       setFeedback(feedback.filter((item) => item.id !== id));
     }
